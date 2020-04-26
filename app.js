@@ -9,7 +9,15 @@ var usersRouter = require('./routes/users');
 var subjectRouter=require('./routes/subjects');
 
 var app = express();
+//connection to local db
 mongoose.connect('mongodb://localhost/GateApi',{useNewUrlParser: true,useUnifiedTopology: true });
+
+//connecting to the remote db
+// mongoose.connect('mongodb+srv://root:root@gateashramcluster-ddwdn.mongodb.net/GateQuestionBank?retryWrites=true&w=majority')
+// 	.then(()=>console.log('connected to MongoDB...'))
+// 	.catch(err => console.error('could not connect to MongoDB...',err));
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
